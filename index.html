@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kardex Central — GD/EBN</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231F6F63'/%3E%3Ctext x='50' y='70' font-size='56' font-family='Georgia,serif' font-weight='600' fill='%23F3F1E8' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -12,6 +13,11 @@
   body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#EEEBE2;color:#141413}
   img{max-width:100%}
   #root{min-height:100vh}
+  /* El fondo beige de la pagina (arriba) es solo para la pantalla. Sin esta regla, al imprimir
+     cualquier documento (boletas, guias de despacho, fichas, etc.) ese beige se ve detras/alrededor
+     del papel impreso -- el usuario lo reporto viendo un margen gris-beige de mas en la hoja
+     impresa. En pantalla no cambia nada; solo aplica al imprimir / vista previa de impresion. */
+  @media print { body{background:#FFFFFF!important} }
 </style>
 </head>
 <body>
