@@ -18,12 +18,24 @@
      del papel impreso -- el usuario lo reporto viendo un margen gris-beige de mas en la hoja
      impresa. En pantalla no cambia nada; solo aplica al imprimir / vista previa de impresion. */
   @media print { body{background:#FFFFFF!important} }
+  /* En la Ficha biografica/ampliada, un campo vacio dice "No hay datos" en pantalla (para que
+     quien la esta llenando note que falta cargarlo) pero al imprimir/exportar a PDF eso no debe
+     salir en el papel -- el usuario lo pidio asi. En pantalla sigue mostrando el aviso normal. */
+  @media print { .celda-ficha-vacia{ color:transparent!important } }
+  /* Ficha biografica/ampliada: reduce un poco el espacio de cada fila SOLO al imprimir (pedido del
+     usuario, "reducir el campo visual para una ficha mas resumida") -- en pantalla no cambia nada,
+     asi se sigue viendo comodo para leer/editar, pero en papel entra mas informacion por hoja. */
+  @media print {
+    .celda-ficha-label, .celda-ficha-valor{ padding:4px 8px!important; font-size:10px!important }
+    .seccion-ficha-titulo{ padding:4px 8px!important; font-size:9.5px!important }
+    .seccion-ficha-wrap{ margin-bottom:7px!important }
+  }
 </style>
 </head>
 <body>
 <div id="root"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"></script>
-<script src="bundle.js?v=20260921f"></script>
+<script src="bundle.js?v=20260921h"></script>
 </body>
 </html>
